@@ -1,6 +1,6 @@
 # Projeto Integrador - Nuance Store - Backend
 
-https://img.shields.io/npm/l/react
+<img src="https://img.shields.io/npm/l/react">
 
 Por [Ruan Azevedo](https://www.github.com/azevedoruan), [Pedro Luiz Ellero](https://www.github.com/PedroEllero), Hugo Okumura e Marcos Paulo Oliveira.
 
