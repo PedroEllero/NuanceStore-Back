@@ -75,8 +75,14 @@ WSGI_APPLICATION = 'nuancestore.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'NUANCEDB',
+        'USER':'root',
+        'PASSWORD':'b4pj24ca_Nuance',
+        'HOST':'root',
+        'OPTIONS':{
+            'init_command':"SET sql_mode = 'STRICT_TRANS_TABLES'"
+        }
     }
 }
 
