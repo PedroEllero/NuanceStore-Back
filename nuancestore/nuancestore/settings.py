@@ -79,9 +79,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'NUANCEDB',
-        'USER':'root',
+        'USER':'NuanceAdmin',
         'PASSWORD':'b4pj24ca_Nuance',
-        'HOST':'root',
+        'HOST':'localhost', #mudar após deploy
         'OPTIONS':{
             'init_command':"SET sql_mode = 'STRICT_TRANS_TABLES'"
         }
