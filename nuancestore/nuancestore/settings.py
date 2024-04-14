@@ -82,7 +82,7 @@ DATABASES = {
         'NAME': 'NUANCEDB',
         'USER':'NuanceAdmin',
         'PASSWORD':'b4pj24ca_Nuance',
-        'HOST':'localhost',
+        'HOST':'localhost', #mudar após deploy
         'OPTIONS':{
             'init_command':"SET sql_mode = 'STRICT_TRANS_TABLES'"
         }
