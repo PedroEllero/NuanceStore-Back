@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'CRUDShop',
     'CRUDUsers',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
