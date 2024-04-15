@@ -3,8 +3,8 @@
 from django.db import migrations
 
 def create_data(apps, schema_editor):
-    Tipo = apps.get_model('CRUDShop', 'Tipo')
-    Tipo(descricao='dahora')
+    Produto = apps.get_model('CRUDShop', 'Produto')
+    Produto(descricao='dahora', preco=10.42, Tipo='foda').save()
 
 class Migration(migrations.Migration):
 

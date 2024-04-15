@@ -22,7 +22,7 @@ def produtoLista(request):
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-@api_view(['PUT', 'DELETE'])
+@api_view(['GET','PUT', 'DELETE'])
 def produtoDetalhes(request, pk):
     try:
         produto = Produto.objects.get(pk=pk)
@@ -30,7 +30,7 @@ def produtoDetalhes(request, pk):
         return Response(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'PUT':
-        serializer = ProdutoSerializer(Produto, data=request.data,context={'request': request})
+        serializer = ProdutoSerializer(produto, data=request.data,context={'request': request})
         if serializer.is_valid():
             serializer.save()
             return Response(status=status.HTTP_204_NO_CONTENT)
@@ -39,3 +39,6 @@ def produtoDetalhes(request, pk):
     elif request.method == 'DELETE':
         produto.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+    elif request.method == 'GET':
+        serializer = ProdutoSerializer(produto, context={'request':request})
+        return Response(serializer.data, status=status.HTTP_204_NO_CONTENT)
