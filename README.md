@@ -2,7 +2,7 @@
 
 <img src="https://img.shields.io/npm/l/react">
 
-Por [Ruan Azevedo](https://www.github.com/azevedoruan), [Pedro Luiz Ellero](https://www.github.com/PedroEllero), [Hugo Okumura](https://github.com/HugoOkumura) e Marcos Paulo Oliveira.
+Por [Ruan Azevedo](https://www.github.com/azevedoruan), [Pedro Luiz Ellero](https://www.github.com/PedroEllero), [Hugo Okumura](https://github.com/HugoOkumura) e [Marcos Paulo Oliveira](https://github.com/Marcos953).
 
 ## Sobre o projeto
 
