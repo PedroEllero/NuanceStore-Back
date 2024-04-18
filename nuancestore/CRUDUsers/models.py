@@ -1,18 +1,7 @@
 from django.db import models
 
 # Create your models here.
-
-class User(models.Model):
-    cpf = models.CharField(max_length=15)
-    nome = models.CharField(max_length=50)
-    email = models.CharField(max_length=60)
-    telefone = models.CharField(max_length=20)
-
-    def __str__(self):
-        return self.cpf
-    
 class Endereco(models.Model):
-    UserCpf = models.ForeignKey(User, on_delete=models.CASCADE)
     cidade = models.CharField(max_length=50)
     estado = models.CharField(max_length=20)
     logradouro = models.CharField(max_length=20)
@@ -20,3 +9,16 @@ class Endereco(models.Model):
     bairro = models.CharField(max_length=50)
     cep = models.IntegerField()
     
+    def __str__(self):
+        return str((self.cidade, self.estado, self.logradouro, self.bairro, self.numero, self.cep))
+    
+class User(models.Model):
+    cpf = models.CharField(max_length=15)
+    nome = models.CharField(max_length=50)
+    email = models.EmailField(error_messages="ERRO: e-mail fornecido não é valido")
+    telefone = models.CharField(max_length=20)
+    senha = models.CharField(max_length=30)
+    enderecos = models.ManyToManyField(Endereco)
+
+    def __str__(self):
+        return self.cpf
