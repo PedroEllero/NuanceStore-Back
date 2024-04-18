@@ -4,10 +4,10 @@ from .models import *
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('cpf','nome','email','telefone')
+        fields = ('cpf','nome','email','telefone', 'senha', 'enderecos')
     
 
-class Endereco(serializers.ModelSerializer):
+class EnderecoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Endereco
-        fields = ('UserCpf','cidade','estado','logradouro','numero','bairro','cep')
+        fields = ('cidade','estado','logradouro','numero','bairro','cep')
