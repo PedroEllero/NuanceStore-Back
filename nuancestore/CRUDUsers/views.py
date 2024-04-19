@@ -1,5 +1,7 @@
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
+from django.http import JsonResponse
+from django.contrib.auth import authenticate
 from rest_framework import status
 
 from .models import *
@@ -19,7 +21,23 @@ def userLista(request):
             return Response(status=status.HTTP_201_CREATED)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    
+
+@api_view(['POST'])
+def userLogin(request):
+    email = request.data.get('email')
+    senha = request.data.get('senha')
+
+    if email is None or senha is None:
+        return Response({'message':'Preencha corretamente os campos para o login'}, status=status.HTTP_400_BAD_REQUEST)
+    else:
+        try:
+            data = User.objects.get(email=email, senha=senha)
+        except User.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+        
+        serializer = UserSerializer(data)
+        return Response(serializer.data, status=status.HTTP_202_ACCEPTED)
+
 @api_view(['GET','PUT','DELETE'])
 def usersDetail(request,userID):
     try:

@@ -8,10 +8,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^api/users/$', userViews.userLista),
     re_path(r'^api/user/([0-9]+)$', userViews.usersDetail),
+    re_path(r'api/user/login', userViews.userLogin),
     re_path(r'^api/produtos/$', shopViews.produtoLista),
     re_path(r'^api/produto/([0-9]+)$', shopViews.produtoDetalhes),
-    re_path(r'^api/enderecos/$', views.enderecoLista),
-    re_path(r'^api/user/([0-9]+)/enderecos/$', views.userEndereco),
-    re_path(r'^api/user/([0-9]+)/endereco/([0-9]+)$', views.userEnderecoEdit)
+    re_path(r'^api/enderecos/$', userViews.enderecoLista),
+    re_path(r'^api/user/([0-9]+)/enderecos/$', userViews.userEndereco),
+    re_path(r'^api/user/([0-9]+)/endereco/([0-9]+)$', userViews.userEnderecoEdit)
 ]
 
